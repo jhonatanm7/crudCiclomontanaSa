@@ -5,6 +5,7 @@
 </head>
 <body>
 	<h1>Hola Cliente Bienvenido</h1>
+	
 	<div id="PersonTableContainer"></div>
 
 
@@ -21,6 +22,7 @@
 
 	<script src="<?php echo base_url() ?>assets/plugins/jtable.2.4.0/jquery.jtable.min.js" type="text/javascript"></script>
 	<script src="<?php echo base_url() ?>assets/plugins/jtable.2.4.0/localization/jquery.jtable.es.js" type="text/javascript"></script>
+
 	<script type="text/javascript">
     $(document).ready(function () {
         $('#PersonTableContainer').jtable({
