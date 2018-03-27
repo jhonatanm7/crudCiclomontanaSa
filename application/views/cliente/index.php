@@ -18,7 +18,7 @@
 	<link href="<?php echo base_url() ?>assets/plugins/jtable.2.4.0/themes/metro/blue/jtable.min.css" rel="stylesheet" type="text/css" />
 	 
 	<!-- Include jTable script file. -->
-	
+
 	<script src="<?php echo base_url() ?>assets/plugins/jtable.2.4.0/jquery.jtable.min.js" type="text/javascript"></script>
 	<script src="<?php echo base_url() ?>assets/plugins/jtable.2.4.0/localization/jquery.jtable.es.js" type="text/javascript"></script>
 	<script type="text/javascript">
@@ -26,7 +26,7 @@
         $('#PersonTableContainer').jtable({
             title: 'Lista de clientes',
             actions: {
-                listAction: '/GettingStarted/PersonList',
+                listAction: '<?php echo site_url(); ?>/Visitas/list',
                 createAction: '/GettingStarted/CreatePerson',
                 updateAction: '/GettingStarted/UpdatePerson',
                 deleteAction: '/GettingStarted/DeletePerson'

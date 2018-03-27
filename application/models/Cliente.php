@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class cliente extends CI_Model {
 
+	function list(){
+		$this->db->select('*');
+		$this->db->from('cliente');
+		return $this->db->get()->result_array();
+	}
+
 	
 
 }
