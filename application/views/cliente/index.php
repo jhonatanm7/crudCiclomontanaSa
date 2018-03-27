@@ -26,15 +26,19 @@
         $('#PersonTableContainer').jtable({
             title: 'Lista de clientes',
             actions: {
-                listAction: '<?php echo site_url(); ?>/Visitas/list',
+                listAction: '<?php echo site_url(); ?>/Visitas/listaCliente',
                 createAction: '/GettingStarted/CreatePerson',
                 updateAction: '/GettingStarted/UpdatePerson',
                 deleteAction: '/GettingStarted/DeletePerson'
             },
             fields: {
-                nitCliente: {
+            	idCliente: {
                     key: true,
                     list: false
+                },
+                nitCliente: {
+                    title: 'Nit',
+                    width: '40%'
                 },
                 nomClienteCom: {
                     title: 'Nombre Completo',
@@ -46,13 +50,11 @@
                 },
                 telCliente: {
                     title: 'Telefono',
-                    width: '30%',
-                    type: 'date',
-                    create: false,
-                    edit: false
+                    width: '30%', 
                 }
             }
         });
+        $('#PersonTableContainer').jtable('load');
     });
 </script>
 </body>
