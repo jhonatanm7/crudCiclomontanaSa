@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class visitas extends CI_Controller {
+class Vendedor extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
-		$this->load->model('Vendedor');
+		$this->load->model('vendedores_model');
 	}
 
 	public function index(){
@@ -13,7 +13,7 @@ class visitas extends CI_Controller {
 	}
 
 	public function listaVendedor(){
-		$campos = $this->Cliente->listaVendedor();
+		$campos = $this->vendedores_model->listaVendedor();
 		$jTableResult['Result'] = "OK";
 		$jTableResult['Records'] = $campos;
 		header("Content-Type: application/json");
@@ -22,14 +22,14 @@ class visitas extends CI_Controller {
 	}
 
 	public function insertarVendedor(){
-		$idCliente = $this->Vendedor->crearVendedor($_POST);
-		if($idCliente==0){
+		$idVendedor = $this->vendedores_model->crearVendedor($_POST);
+		if($idVendedor==0){
 			$jTableResult['Result'] = 'ERROR';
 			$jTableResult['Message']= 'No Inserto el registro';
 		} else{
-			$crearCliente = $this->Vendedor->one($idCliente);
+			$crearVendedor = $this->vendedores_model->one($idVendedor);
 			$jTableResult['Result'] = "OK";
-			$jTableResult['Record'] = $crearCliente;	
+			$jTableResult['Record'] = $crearVendedor;	
 			$jTableResult['Message']= 'Inserto el registro';	
 		}
 		header("Content-Type: application/json");
@@ -37,11 +37,11 @@ class visitas extends CI_Controller {
 	}
 
 	public function editarVendedor(){
-		$idCliente = $_POST['idCliente'];
-		unset($_POST['idCliente']);
-		$estado = $this->Vendedor->editarVendedor($idVendedor, $_POST);
+		$idVendedor = $_POST['idVendedor'];
+		unset($_POST['idVendedor']);
+		$estado = $this->vendedores_model->editarVendedor($idVendedor, $_POST);
 		if($estado){
-			$crearCliente = $this->Vendedor->one($idVendedor);
+			$crearVendedor = $this->vendedores_model->one($idVendedor);
 			$jTableResult['Result'] = "OK";
 			$jTableResult['Record'] = $crearVendedor;
 		}else{
@@ -52,7 +52,7 @@ class visitas extends CI_Controller {
 		echo json_encode($jTableResult);		
 	}
 	public function eliminarVendedor(){
-		$estado = $this->Vendedor->eliminarVendedor($_POST['idVendedor']);
+		$estado = $this->vendedores_model->eliminarVendedor($_POST['idVendedor']);
 		if($estado){
 			$jTableResult['Result'] = "OK";
 		}else{

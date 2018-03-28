@@ -4,7 +4,7 @@
     <title>Lista Vendedor</title>
 </head>
 <body>
-    <h1>Hola Vendedor Bienvenido</h1>
+    <h1>Lista Vendedores Bienvenido</h1>
     
     <div id="VendedorTableContainer"></div>
 
@@ -25,7 +25,7 @@
     <script type="text/javascript">
     $(document).ready(function () {
         $('#VendedorTableContainer').jtable({
-            title: 'Lista de clientes',
+            title: 'Lista de Vendedores',
             actions: {
                 listAction: '<?php echo site_url(); ?>/Vendedor/listaVendedor',
                 createAction: '<?php echo site_url(); ?>/Vendedor/insertarVendedor',
@@ -42,7 +42,7 @@
                     width: '40%'
                 },
                 telVendedor: {
-                    title: 'Direccion ',
+                    title: 'Telefono ',
                     width: '20%'
                 }
             }
