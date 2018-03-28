@@ -49,8 +49,18 @@ class visitas extends CI_Controller {
 			$jTableResult['Message']= 'No se actualizo el registro';
 		}
 		header("Content-Type: application/json");
-		echo json_encode($jTableResult);
-		
+		echo json_encode($jTableResult);		
+	}
+	public function eliminarCliente(){
+		$estado = $this->Cliente->eliminarCliente($_POST['idCliente']);
+		if($estado){
+			$jTableResult['Result'] = "OK";
+		}else{
+			$jTableResult['Result'] = 'ERROR';
+			$jTableResult['Message']= 'No se elimino el registro';
+		}
+		header("Content-Type: application/json");
+		echo json_encode($jTableResult);	
 	}	
 
 }
