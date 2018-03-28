@@ -9,7 +9,7 @@ class visitas extends CI_Controller {
 	}
 
 	public function index(){
-		$this->load->view('Vendedor/index');
+		$this->load->view('vendedor/index');
 	}
 
 	public function listaVendedor(){

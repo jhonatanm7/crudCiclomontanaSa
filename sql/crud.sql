@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-03-2018 a las 21:12:43
+-- Tiempo de generación: 28-03-2018 a las 18:02:48
 -- Versión del servidor: 5.7.14
 -- Versión de PHP: 5.6.25
 
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `crud`
 --
+CREATE DATABASE IF NOT EXISTS `crud` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `crud`;
 
 -- --------------------------------------------------------
 
@@ -37,12 +39,17 @@ CREATE TABLE `cliente` (
   `paisCliente` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Volcado de datos para la tabla `cliente`
+-- Estructura de tabla para la tabla `vendedor`
 --
 
-INSERT INTO `cliente` (`idCliente`, `nitCliente`, `nomClienteCom`, `dirCliente`, `telCliente`, `ciudadCliente`, `deptoCliente`, `paisCliente`) VALUES
-(1, '89000120', 'Juanito Alimaña', 'Calle 23 No 2 casa 5', '8761296', 1, 23, 36);
+CREATE TABLE `vendedor` (
+  `idVendedor` int(11) NOT NULL,
+  `nomVendedor` varchar(150) NOT NULL,
+  `telVendedor` varchar(80) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Índices para tablas volcadas
@@ -55,6 +62,12 @@ ALTER TABLE `cliente`
   ADD PRIMARY KEY (`idCliente`);
 
 --
+-- Indices de la tabla `vendedor`
+--
+ALTER TABLE `vendedor`
+  ADD PRIMARY KEY (`idVendedor`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -62,7 +75,12 @@ ALTER TABLE `cliente`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `idCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT de la tabla `vendedor`
+--
+ALTER TABLE `vendedor`
+  MODIFY `idVendedor` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
