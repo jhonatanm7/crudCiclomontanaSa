@@ -9,6 +9,18 @@ class cliente extends CI_Model {
 		return $this->db->get()->result_array();
 	}
 
+	function one($id){
+		$this->db->select('*');
+		$this->db->from('cliente');
+		$this->db->where('idCliente', $id);
+		return $this->db->get()->row_array();
+	}
+	function crearCliente($params){
+		$this->db->insert('cliente', $params);
+		return $this->db->insert_id();
+	}
+
+
 	
 
 }

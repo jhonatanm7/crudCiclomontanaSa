@@ -19,6 +19,20 @@ class visitas extends CI_Controller {
 		header("Content-Type: application/json");
 		echo json_encode($jTableResult);
 
+	}
+
+	public function insertarCliente(){
+		$idCliente = $this->Cliente->crearCliente($_POST);
+		if($idCliente==0){
+			$jTableResult['Result'] = 'ERROR';
+			$jTableResult['Message']= 'No Inserto el registro';
+		} else{
+			$crearCliente = $this->Cliente->one($id);
+			$jTableResult['Result'] = 'OK';
+			$jTableResult['record']= $crearCliente;			
+		}
+		header("Content-Type: application/json");
+		echo json_encode($jTableResult);
 	}	
 
 }

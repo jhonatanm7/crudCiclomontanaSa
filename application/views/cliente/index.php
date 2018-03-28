@@ -29,7 +29,7 @@
             title: 'Lista de clientes',
             actions: {
                 listAction: '<?php echo site_url(); ?>/Visitas/listaCliente',
-                createAction: '/GettingStarted/CreatePerson',
+                createAction: '<?php echo site_url(); ?>/Visitas/insertarCliente',
                 updateAction: '/GettingStarted/UpdatePerson',
                 deleteAction: '/GettingStarted/DeletePerson'
             },
