@@ -27,12 +27,30 @@ class visitas extends CI_Controller {
 			$jTableResult['Result'] = 'ERROR';
 			$jTableResult['Message']= 'No Inserto el registro';
 		} else{
-			$crearCliente = $this->Cliente->one($id);
-			$jTableResult['Result'] = 'OK';
-			$jTableResult['record']= $crearCliente;			
+			$crearCliente = $this->Cliente->one($idCliente);
+			$jTableResult['Result'] = "OK";
+			$jTableResult['Record'] = $crearCliente;	
+			$jTableResult['Message']= 'Inserto el registro';	
 		}
 		header("Content-Type: application/json");
 		echo json_encode($jTableResult);
+	}
+
+	public function editarCliente(){
+		$idCliente = $_POST['idCliente'];
+		unset($_POST['idCliente']);
+		$estado = $this->Cliente->editarCliente($idCliente, $_POST);
+		if($estado){
+			$crearCliente = $this->Cliente->one($idCliente);
+			$jTableResult['Result'] = "OK";
+			$jTableResult['Record'] = $crearCliente;
+		}else{
+			$jTableResult['Result'] = 'ERROR';
+			$jTableResult['Message']= 'No se actualizo el registro';
+		}
+		header("Content-Type: application/json");
+		echo json_encode($jTableResult);
+		
 	}	
 
 }

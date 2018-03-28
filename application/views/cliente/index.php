@@ -30,8 +30,8 @@
             actions: {
                 listAction: '<?php echo site_url(); ?>/Visitas/listaCliente',
                 createAction: '<?php echo site_url(); ?>/Visitas/insertarCliente',
-                updateAction: '/GettingStarted/UpdatePerson',
-                deleteAction: '/GettingStarted/DeletePerson'
+                updateAction: '<?php echo site_url(); ?>/Visitas/editarCliente',
+                deleteAction: '<?php echo site_url(); ?>/Visitas/eliminarCliente'
             },
             fields: {
             	idCliente: {
