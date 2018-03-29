@@ -40,11 +40,11 @@
                 },
                 nitCliente: {
                     title: 'Nit',
-                    width: '40%'
+                    width: '20%'
                 },
                 nomClienteCom: {
                     title: 'Nombre Completo',
-                    width: '40%'
+                    width: '30%'
                 },
                 dirCliente: {
                     title: 'Direccion ',
@@ -52,7 +52,23 @@
                 },
                 telCliente: {
                     title: 'Telefono',
-                    width: '30%', 
+                    width: '10%', 
+                },
+				ciudadCliente: {
+                    title: 'Ciudad',
+                    width: '20%', 
+                },
+				deptoCliente: {
+                    title: 'Departamento',
+                    width: '20%', 
+                },
+				cupo: {
+                    title: 'Cupo',
+                    width: '20%', 
+                },
+				saldoCupo: {
+                    title: 'Saldo Cupo',
+                    width: '20%', 
                 }
             }
         });
